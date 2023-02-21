@@ -87,42 +87,46 @@ def depthFirstSearch(problem: SearchProblem):
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
-    
-    for i in range(20000):
-        print("")
 
     fringe = util.Stack() 
-    start_state = problem.getStartState()# initial state
-    actions = [] #list of the actions that the agent took so far to get to its state(position)
-    start_node = (start_state,actions) #node to hold the state(position) and the array of actions
+    start_state = problem.getStartState()
+    #initial state
+    actions = [] 
+    #list of the actions that the agent took so far to get to its state(position)
+    start_node = (start_state,actions) 
+    #node to hold the state(position) and the array of actions
     visited_states = []
-
+    #list of visited states, to avoid redundancy and infinite cycles
     fringe.push(start_node) 
 
     while not fringe.isEmpty():
 
         current_node = fringe.pop()
-        current_state = current_node[0] #current position
-        current_actions = current_node [1] #the actions the agent took so far to get to the current position 
+        current_state = current_node[0] 
+        #current position
+        current_actions = current_node [1] 
+        #the actions the agent took so far to get to the current position 
 
 
         if (current_state not in visited_states):
             visited_states.append(current_state)
 
-            if (problem.isGoalState(current_state)): #if goal return the list of actions
-                print(problem.getCostOfActions(actions))
+            if (problem.isGoalState(current_state)): 
+                #if the current state is the goal return the list of actions
                 return actions
             
             else:
-                successors = problem.getSuccessors(current_state) # list of successors of the current state
+                successors = problem.getSuccessors(current_state) 
+                #list of successors of the current state
                 for successor in successors:
-                    successor_state = successor[0] # successor position
-                    successor_action = successor[1] # successor's required action to get to its position
-                    actions = current_actions + [successor_action] # add the action to the action list
+                    successor_state = successor[0] 
+                    #successor position
+                    successor_action = successor[1] 
+                    #successor's required action to get to its position
+                    actions = current_actions + [successor_action] 
+                    #add the action to the action list
                     next_node = (successor_state,actions)
                     fringe.push(next_node) 
-       
-
     return actions
 
 def breadthFirstSearch(problem: SearchProblem):
@@ -198,7 +202,7 @@ def uniformCostSearch(problem: SearchProblem):
                     
                     actions = current_actions + [successor_action] # add the action to the action list
                     next_node = (successor_state,actions,current_cost)
-                    fringe.push(next_node,successor_cost)
+                    fringe.push(next_node,successor_cost)# push the next successor node that contains its state aka position
        
 
 def nullHeuristic(state, problem=None):
@@ -213,11 +217,14 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     "*** YOUR CODE HERE ***"
 
     fringe = util.PriorityQueue() 
-    start_state = problem.getStartState()# initial state
-    actions = [] # list of the actions that the agent took so far to get to its state(position)
+    start_state = problem.getStartState()
+    #initial state
+    actions = [] 
+    # list of the actions that the agent took so far to get to its state(position)
     cost = 0
     start_heuristic = heuristic(start_state, problem)
-    start_node = (start_state,actions, cost + start_heuristic) #node to hold the state and the array of actions
+    start_node = (start_state,actions, cost + start_heuristic)
+    #node to hold the state and the array of actions
     visited_states = []
 
     fringe.push(start_node,cost) 
@@ -225,32 +232,37 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     while not fringe.isEmpty():
  
         current_node = fringe.pop()
-        current_state = current_node[0] #current position
-        current_actions = current_node [1] #the actions the agent took so far to get to the current position 
+        current_state = current_node[0]
+        #current position
+        current_actions = current_node [1] 
+        #the actions the agent took so far to get to the current position 
         current_heuristic_and_cost = current_node[2]
 
         if (current_state not in visited_states):
             visited_states.append(current_state)
 
-            if (problem.isGoalState(current_state)): #if goal return the list of actions
+            if (problem.isGoalState(current_state)): 
+                #if current state is the goal return its list of actions
                 return current_actions
             
             else:
-                successors = problem.getSuccessors(current_state) # list of successors of the current state
+                successors = problem.getSuccessors(current_state) 
+                #list of successors of the current state
 
                 for successor in successors:
-                    successor_state = successor[0] # successor position
-                    successor_action = successor[1] # successor's required action to get to its position
+                    successor_state = successor[0] 
+                    #successor position
+                    successor_action = successor[1] 
+                    #successor's required action to get to its position
                     successor_cost = successor[2]
                     successor_heuristic = heuristic(successor_state, problem)
                     successor_heuristic_and_cost = successor_cost + successor_heuristic
                     
-                    actions = current_actions + [successor_action] # add the action to the action list
+                    actions = current_actions + [successor_action] 
+                    #add the action to the action list
                     next_node = (successor_state,actions,successor_heuristic_and_cost)
                     fringe.push(next_node,successor_heuristic_and_cost)
    
-
-
 
 
 # Abbreviations
