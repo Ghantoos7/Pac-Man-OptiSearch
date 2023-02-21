@@ -90,8 +90,8 @@ def depthFirstSearch(problem: SearchProblem):
   
     fringe = util.Stack() 
     start_state = problem.getStartState()# initial state
-    actions = [] #list of the actions that the agent is gonna take to get to the goal
-    start_node = (start_state,actions) #node to hold the state and the array of actions
+    actions = [] #list of the actions that the agent took so far to get to its state(position)
+    start_node = (start_state,actions) #node to hold the state(position) and the array of actions
     visited_states = []
 
     fringe.push(start_node) 
@@ -107,14 +107,14 @@ def depthFirstSearch(problem: SearchProblem):
             visited_states.append(current_state)
 
             if (problem.isGoalState(current_state)): #if goal return the list of actions
+                print(problem.getCostOfActions(actions))
                 return actions
             
             else:
                 successors = problem.getSuccessors(current_state) # list of successors of the current state
-
                 for successor in successors:
                     successor_state = successor[0] # successor position
-                    successor_action = successor[1] # successor required action to get to its position
+                    successor_action = successor[1] # successor's required action to get to its position
                     actions = current_actions + [successor_action] # add the action to the action list
                     next_node = (successor_state,actions)
                     fringe.push(next_node) 
@@ -122,20 +122,81 @@ def depthFirstSearch(problem: SearchProblem):
 
     return actions
 
-
-
-
-    
-
 def breadthFirstSearch(problem: SearchProblem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    
+    fringe = util.Queue() 
+    start_state = problem.getStartState()# initial state
+    actions = [] # list of the actions that the agent took so far to get to its state(position)
+    start_node = (start_state,actions) #node to hold the state and the array of actions
+    visited_states = []
+
+    fringe.push(start_node) 
+
+    while not fringe.isEmpty():
+ 
+        current_node = fringe.pop()
+        current_state = current_node[0] #current position
+        current_actions = current_node [1] #the actions the agent took so far to get to the current position 
+
+        if (current_state not in visited_states):
+            visited_states.append(current_state)
+
+            if (problem.isGoalState(current_state)): #if goal return the list of actions
+                return current_actions
+            
+            else:
+                successors = problem.getSuccessors(current_state) # list of successors of the current state
+                print(successors)
+                for successor in successors:
+                    successor_state = successor[0] # successor position
+                    successor_action = successor[1] # successor's required action to get to its position
+                    actions = current_actions + [successor_action] # add the action to the action list
+                    next_node = (successor_state,actions)
+                    fringe.push(next_node) 
+       
+
+    return actions
 
 def uniformCostSearch(problem: SearchProblem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    
+    fringe = util.PriorityQueue() 
+    start_state = problem.getStartState()# initial state
+    actions = [] # list of the actions that the agent took so far to get to its state(position)
+    cost = 0
+    start_node = (start_state,actions,cost) #node to hold the state and the array of actions
+    visited_states = []
+
+    fringe.push(start_node,cost) 
+
+    while not fringe.isEmpty():
+ 
+        current_node = fringe.pop()
+        current_state = current_node[0] #current position
+        current_actions = current_node [1] #the actions the agent took so far to get to the current position 
+        current_cost = current_node[2]
+
+        if (current_state not in visited_states):
+            visited_states.append(current_state)
+
+            if (problem.isGoalState(current_state)): #if goal return the list of actions
+                return current_actions
+            
+            else:
+                successors = problem.getSuccessors(current_state) # list of successors of the current state
+
+                for successor in successors:
+                    successor_state = successor[0] # successor position
+                    successor_action = successor[1] # successor's required action to get to its position
+                    successor_cost = successor[2]
+                    
+                    actions = current_actions + [successor_action] # add the action to the action list
+                    next_node = (successor_state,actions,current_cost)
+                    fringe.push(next_node,successor_cost)
+       
 
 def nullHeuristic(state, problem=None):
     """
@@ -147,8 +208,6 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
-
 
 # Abbreviations
 bfs = breadthFirstSearch
