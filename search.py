@@ -132,37 +132,44 @@ def depthFirstSearch(problem: SearchProblem):
 def breadthFirstSearch(problem: SearchProblem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    
-    fringe = util.Queue() 
-    start_state = problem.getStartState()# initial state
-    actions = [] # list of the actions that the agent took so far to get to its state(position)
-    start_node = (start_state,actions) #node to hold the state and the array of actions
+    fringe = util.Queue()
+    start_state = problem.getStartState()
+    #initial state
+    actions = [] 
+    #list of the actions that the agent took so far to get to its state(position)
+    start_node = (start_state,actions) 
+    #node to hold the state and the array of actions
     visited_states = []
-
+     #list of visited states, to avoid redundancy and infinite cycles
     fringe.push(start_node) 
 
     while not fringe.isEmpty():
  
         current_node = fringe.pop()
-        current_state = current_node[0] #current position
-        current_actions = current_node [1] #the actions the agent took so far to get to the current position 
+        current_state = current_node[0] 
+        #current position
+        current_actions = current_node [1] 
+        #the actions the agent took so far to get to the current position 
 
         if (current_state not in visited_states):
             visited_states.append(current_state)
 
-            if (problem.isGoalState(current_state)): #if goal return the list of actions
+            if (problem.isGoalState(current_state)): 
+                #if goal return the list of actions
                 return current_actions
             
             else:
-                successors = problem.getSuccessors(current_state) # list of successors of the current state
-                print(successors)
+                successors = problem.getSuccessors(current_state) 
+                #list of successors of the current state
                 for successor in successors:
-                    successor_state = successor[0] # successor position
-                    successor_action = successor[1] # successor's required action to get to its position
-                    actions = current_actions + [successor_action] # add the action to the action list
+                    successor_state = successor[0] 
+                    #successor position
+                    successor_action = successor[1] 
+                    #successor's required action to get to its position
+                    actions = current_actions + [successor_action] 
+                    #add the action to the action list
                     next_node = (successor_state,actions)
                     fringe.push(next_node) 
-       
 
     return actions
 
