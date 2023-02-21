@@ -87,7 +87,10 @@ def depthFirstSearch(problem: SearchProblem):
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
-  
+    
+    for i in range(20000):
+        print("")
+
     fringe = util.Stack() 
     start_state = problem.getStartState()# initial state
     actions = [] #list of the actions that the agent took so far to get to its state(position)
