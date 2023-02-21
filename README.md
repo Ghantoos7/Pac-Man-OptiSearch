@@ -63,6 +63,7 @@ python pacman.py -l bigMaze -z .5 -p SearchAgent
 ```
 
 <img src="Resorces_for_readme/DFS-bigMaze.gif" width=60%>
+
 ```
 Path found with total cost of 210 in 0.0 seconds
 Search nodes expanded: 390
@@ -111,3 +112,9 @@ python pacman.py -l bigMaze -p SearchAgent -a fn=bfs
 ```
 
 <img src="Resorces_for_readme/BFS-bigMaze.gif" width=60%>
+
+```
+Path found with total cost of 210 in 0.0 seconds
+Search nodes expanded: 620
+Pacman emerges victorious! Score: 300
+```
