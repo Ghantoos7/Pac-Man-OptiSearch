@@ -118,3 +118,7 @@ Path found with total cost of 210 in 0.0 seconds
 Search nodes expanded: 620
 Pacman emerges victorious! Score: 300
 ```
+
+# **Q3: Varying the Cost Function**
+
+
