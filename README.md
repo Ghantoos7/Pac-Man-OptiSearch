@@ -4,7 +4,6 @@
 # Project – Phase 1
 
 Table of Contents:
-
 - [CSC460-Project](#csc460-project)
 - [Project – Phase 1](#project--phase-1)
 - [**Q1: Depth First Search**](#q1-depth-first-search)
