@@ -23,7 +23,7 @@ Table of Content:
 # **Q1: Depth First Search**
 
 ### **DFS tiny Maze**
-
+---
 ```
 python pacman.py -l tinyMaze -p SearchAgent
 ```
@@ -39,6 +39,7 @@ Pacman emerges victorious! Score: 500
 
 
 ### **DFS Medium Maze**
+---
 
 ```
 pacman.py -l mediumMaze -p SearchAgent
@@ -58,6 +59,7 @@ Pacman emerges victorious! Score: 380
 - To ensure that DFS finds the optimal solution, we can modify the algorithm by keeping track of the cost of each path explored and selecting the path with the lowest cost at each step. This modification would turn DFS into an informed search algorithm, such as Uniform Cost Search or A* Search.
 ------------
 ### **DFS Big Maze**
+---
 ```
 python pacman.py -l bigMaze -z .5 -p SearchAgent
 ```
@@ -128,7 +130,7 @@ Pacman emerges victorious! Score: 300
 
 
 ### **UCS Medium Maze**
-
+---
 ```
 python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
 ```
@@ -221,5 +223,4 @@ Path found with total cost of 210 in 0.0 seconds
 Search nodes expanded: 466
 Pacman emerges victorious! Score: 300
 ```
-
 ---
