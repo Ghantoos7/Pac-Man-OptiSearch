@@ -22,9 +22,7 @@ Table of Content:
 
 # **Q1: Depth First Search**
 
-
-
-## *DFS tiny Maze*
+### *DFS tiny Maze*
 
 ```
 python pacman.py -l tinyMaze -p SearchAgent
@@ -40,7 +38,7 @@ Pacman emerges victorious! Score: 500
 ------
 
 
-## *DFS Medium Maze*
+### *DFS Medium Maze*
 
 ```
 pacman.py -l mediumMaze -p SearchAgent
@@ -59,7 +57,7 @@ Pacman emerges victorious! Score: 380
 
 - To ensure that DFS finds the optimal solution, we can modify the algorithm by keeping track of the cost of each path explored and selecting the path with the lowest cost at each step. This modification would turn DFS into an informed search algorithm, such as Uniform Cost Search or A* Search.
 ------------
-## *DFS Big Maze*
+### *DFS Big Maze*
 ```
 python pacman.py -l bigMaze -z .5 -p SearchAgent
 ```
@@ -83,7 +81,8 @@ Pacman emerges victorious! Score: 300
 
 # **Q2: Breadth First Search**
 
-## *BFS Small Maze*
+### BFS Small Maze
+------
 
 ```
 python pacman.py -l smallMaze -p SearchAgent -a fn=bfs
@@ -98,7 +97,8 @@ Pacman emerges victorious! Score: 502
 ```
 -------------
 
-## *BFS Medium Maze*
+### BFS Medium Maze
+-------
 ```
 python pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
 ```
@@ -110,7 +110,8 @@ Search nodes expanded: 269
 Pacman emerges victorious! Score: 442
 ```
 ----
-## *BFS Big Maze*
+### BFS Big Maze
+-----
 ```
 python pacman.py -l bigMaze -p SearchAgent -a fn=bfs
 ```
@@ -126,7 +127,7 @@ Pacman emerges victorious! Score: 300
 # **Q3: Varying the Cost Function**
 
 
-## *UCS Medium Maze*
+### UCS Medium Maze
 
 ```
 python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
@@ -141,8 +142,8 @@ Pacman emerges victorious! Score: 442
 ```
 --------
 
-## *UCS Medium Dotted Maze*
-
+### UCS Medium Dotted Maze
+-----
 ```
 python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
 ```
@@ -156,7 +157,9 @@ Pacman emerges victorious! Score: 646
 ```
 ---
 
-## *UCS Medium Scary Maze*
+### UCS Medium Scary Maze
+
+-------
 
 ```
 python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
@@ -172,7 +175,9 @@ Pacman emerges victorious! Score: 418
 
 ---
 
-## *UCS Big Maze*
+### UCS Big Maze
+
+---------
 
 ```
 python pacman.py -l bigMaze -p SearchAgent -a fn=ucs -z .5
@@ -188,7 +193,8 @@ Pacman emerges victorious! Score: 300
 # **Q4: A\* search**
 
 
-## *A\* Medium Maze*
+### A\* Medium Maze
+-------
 ```
 python pacman.py -l mediumMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
 ```
@@ -200,8 +206,9 @@ Path found with total cost of 74 in 0.0 seconds
 Search nodes expanded: 78
 Pacman emerges victorious! Score: 436
 ```
----
-## *A\* Big Maze*
+---------
+### A\* Big Maze
+--------
 
 ```
 python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
