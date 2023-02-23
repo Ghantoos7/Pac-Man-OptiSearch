@@ -175,8 +175,6 @@ def breadthFirstSearch(problem: SearchProblem):
 def uniformCostSearch(problem: SearchProblem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    for i in range(10000):
-        print(i)
     fringe = util.PriorityQueue()
     #we use a priority since we need to chose our next move based on the cost
     #we will push our nodes(), which contains, the state(position),action list,and the cost
@@ -238,13 +236,12 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-
     fringe = util.PriorityQueue() 
     start_state = problem.getStartState()
     #initial state
     actions = [] 
     # list of the actions that the agent took so far to get to its state(position)
-    start_cost = 0
+    start_cost = 5
     start_heuristic = heuristic(start_state, problem)
     start_node = (start_state,actions, start_cost + start_heuristic)
     #node to hold the state and the array of actions

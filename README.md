@@ -4,8 +4,9 @@
 # Project – Phase 1
 
 Table of Content:
-- Introduction
-- Q1: Depth First Search
+
+- [Q1: Depth First Search]("**Q1:-Depth-First-Search**")
+
 - Q2: Breadth First Search
 - Q3: Uniform Cost Search
 - Q4: A* Search
@@ -186,5 +187,31 @@ Pacman emerges victorious! Score: 300
 ---
 # **Q4: A\* search**
 
+
 ## *A\* Medium Maze*
+```
+python pacman.py -l mediumMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
+```
+
+<img src = "Resorces_for_readme/Astar-mediumMaze.gif" width=90%>
+
+```
+Path found with total cost of 74 in 0.0 seconds
+Search nodes expanded: 78
+Pacman emerges victorious! Score: 436
+```
+
+## *A\* Big Maze*
+
+```
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
+```
+
+<img src = "Resorces_for_readme/Astar-bigMaze.gif" width=60%>
+
+```
+Path found with total cost of 210 in 0.0 seconds
+Search nodes expanded: 466
+Pacman emerges victorious! Score: 300
+```
 
