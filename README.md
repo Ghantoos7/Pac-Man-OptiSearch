@@ -5,7 +5,7 @@
 
 Table of Content:
 
-- [Q1: Depth First Search]("**Q1:-Depth-First-Search**")
+- [Q1: Depth First Search]("Q1:-Depth-First-Search")
 
 - Q2: Breadth First Search
 - Q3: Uniform Cost Search
@@ -200,7 +200,7 @@ Path found with total cost of 74 in 0.0 seconds
 Search nodes expanded: 78
 Pacman emerges victorious! Score: 436
 ```
-
+---
 ## *A\* Big Maze*
 
 ```
@@ -215,3 +215,4 @@ Search nodes expanded: 466
 Pacman emerges victorious! Score: 300
 ```
 
+---
