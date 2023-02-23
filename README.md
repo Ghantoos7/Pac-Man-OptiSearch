@@ -4,18 +4,24 @@
 # Project – Phase 1
 
 Table of Content:
-
-- [Q1: Depth First Search](#q1-depth-first-search)
-- [Q2: Breadth First Search](#q2-breadth-first-search)
-- [Q3: Uniform Cost Search](#q3-varying-the-cost-function)
-- [Q4: A* Search](#q4-a-search)
-- Q5: Corners Problem: Representation
-- Q6: Corners Problem: Heuristic
-- Q7: Eating All The Dots: Heuristic
-- Q8: Suboptimal Search
-
-
-
+- [CSC460-Project](#csc460-project)
+- [Project – Phase 1](#project--phase-1)
+- [**Q1: Depth First Search**](#q1-depth-first-search)
+    - [**DFS tiny Maze**](#dfs-tiny-maze)
+    - [**DFS Medium Maze**](#dfs-medium-maze)
+    - [**DFS Big Maze**](#dfs-big-maze)
+- [**Q2: Breadth First Search**](#q2-breadth-first-search)
+    - [**BFS Small Maze**](#bfs-small-maze)
+    - [**BFS Medium Maze**](#bfs-medium-maze)
+    - [**BFS Big Maze**](#bfs-big-maze)
+- [**Q3: Varying the Cost Function**](#q3-varying-the-cost-function)
+    - [**UCS Medium Maze**](#ucs-medium-maze)
+    - [**UCS Medium Dotted Maze**](#ucs-medium-dotted-maze)
+    - [**UCS Medium Scary Maze**](#ucs-medium-scary-maze)
+    - [**UCS Big Maze**](#ucs-big-maze)
+- [**Q4: A\* search**](#q4-a-search)
+    - [**A\* Medium Maze**](#a-medium-maze)
+    - [**A\* Big Maze**](#a-big-maze)
 
 
 
