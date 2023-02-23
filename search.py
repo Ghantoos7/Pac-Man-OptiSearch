@@ -176,7 +176,8 @@ def breadthFirstSearch(problem: SearchProblem):
 def uniformCostSearch(problem: SearchProblem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    
+    for i in range(10000):
+        print()
     fringe = util.PriorityQueue() 
     start_state = problem.getStartState()# initial state
     actions = [] # list of the actions that the agent took so far to get to its state(position)

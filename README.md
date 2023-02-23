@@ -36,6 +36,7 @@ Path found with total cost of 10 in 0.0 seconds
 Search nodes expanded: 15
 Pacman emerges victorious! Score: 500
 ```
+------
 
 
 ## *DFS Medium Maze*
@@ -56,7 +57,7 @@ Pacman emerges victorious! Score: 380
 - Depth-first search explores a path as far as possible before backtracking, which means it may explore a long path that ultimately doesn't lead to the goal state. Therefore, DFS may find a solution that is not optimal or least cost.
 
 - To ensure that DFS finds the optimal solution, we can modify the algorithm by keeping track of the cost of each path explored and selecting the path with the lowest cost at each step. This modification would turn DFS into an informed search algorithm, such as Uniform Cost Search or A* Search.
-
+------------
 ## *DFS Big Maze*
 ```
 python pacman.py -l bigMaze -z .5 -p SearchAgent
@@ -122,3 +123,31 @@ Pacman emerges victorious! Score: 300
 # **Q3: Varying the Cost Function**
 
 
+## *UCS Medium Maze*
+
+```
+python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
+```
+
+<img src = "Resorces_for_readme/UCS-mediumMaze.gif" width=90%>
+
+```
+Path found with total cost of 68 in 0.5 seconds
+Search nodes expanded: 269
+Pacman emerges victorious! Score: 442
+```
+
+
+## *UCS Medium Dotted Maze*
+
+```
+python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
+```
+
+<img src="Resorces_for_readme/UCS-mediumDottedMaze.gif" width=90%>
+
+```
+Path found with total cost of 1 in 0.5 seconds
+Search nodes expanded: 186
+Pacman emerges victorious! Score: 646
+```
