@@ -78,6 +78,7 @@ Pacman emerges victorious! Score: 300
 
 - Pacman does not actually go to all the explored squares on his way to the goal, and the purpose of displaying the exploration order on the Pacman board is to help us understand how the search algorithm is exploring the state space.
 
+--------
 
 # **Q2: Breadth First Search**
 
@@ -94,6 +95,7 @@ Path found with total cost of 8 in 0.0 seconds
 Search nodes expanded: 15
 Pacman emerges victorious! Score: 502
 ```
+-------------
 
 ## *BFS Medium Maze*
 ```
@@ -106,7 +108,7 @@ Path found with total cost of 68 in 0.0 seconds
 Search nodes expanded: 269
 Pacman emerges victorious! Score: 442
 ```
-
+----
 ## *BFS Big Maze*
 ```
 python pacman.py -l bigMaze -p SearchAgent -a fn=bfs
@@ -119,7 +121,7 @@ Path found with total cost of 210 in 0.0 seconds
 Search nodes expanded: 620
 Pacman emerges victorious! Score: 300
 ```
-
+--------
 # **Q3: Varying the Cost Function**
 
 
@@ -136,7 +138,7 @@ Path found with total cost of 68 in 0.5 seconds
 Search nodes expanded: 269
 Pacman emerges victorious! Score: 442
 ```
-
+--------
 
 ## *UCS Medium Dotted Maze*
 
@@ -151,3 +153,38 @@ Path found with total cost of 1 in 0.5 seconds
 Search nodes expanded: 186
 Pacman emerges victorious! Score: 646
 ```
+---
+
+## *UCS Medium Scary Maze*
+
+```
+python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+```
+
+<img src = "Resorces_for_readme/UCS-mediumScaryMaze.gif" width = 90%>
+
+```
+Path found with total cost of 68719479864 in 0.5 seconds
+Search nodes expanded: 98
+Pacman emerges victorious! Score: 418
+```
+
+---
+
+## *UCS Big Maze*
+
+```
+python pacman.py -l bigMaze -p SearchAgent -a fn=ucs -z .5
+```
+<img src = "Resorces_for_readme/UCS-bigMaze.gif" width = 60%>
+
+```
+Path found with total cost of 210 in 0.0 seconds
+Search nodes expanded: 620
+Pacman emerges victorious! Score: 300
+```
+---
+# **Q4: A\* search**
+
+## *A\* Medium Maze*
+
