@@ -5,11 +5,10 @@
 
 Table of Content:
 
-- [Q1: Depth First Search]("Q1:-Depth-First-Search")
-
-- Q2: Breadth First Search
-- Q3: Uniform Cost Search
-- Q4: A* Search
+- [Q1: Depth First Search](#Q1:-Depth-First-Search)
+- [Q2: Breadth First Search](#Q2:-Breadth-First-Search)
+- [Q3: Uniform Cost Search](#Q3:-Varying-the-Cost-Function)
+- [Q4: A* Search](#A*-search)
 - Q5: Corners Problem: Representation
 - Q6: Corners Problem: Heuristic
 - Q7: Eating All The Dots: Heuristic
