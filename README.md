@@ -4,24 +4,29 @@
 # Project – Phase 1
 
 Table of Contents:
+
 - [CSC460-Project](#csc460-project)
 - [Project – Phase 1](#project--phase-1)
 - [**Q1: Depth First Search**](#q1-depth-first-search)
     - [**DFS tiny Maze**](#dfs-tiny-maze)
     - [**DFS Medium Maze**](#dfs-medium-maze)
     - [**DFS Big Maze**](#dfs-big-maze)
+    - [**DFS Open Maze**](#dfs-open-maze)
 - [**Q2: Breadth First Search**](#q2-breadth-first-search)
     - [**BFS Small Maze**](#bfs-small-maze)
     - [**BFS Medium Maze**](#bfs-medium-maze)
     - [**BFS Big Maze**](#bfs-big-maze)
+    - [**BFS Open Maze**](#bfs-open-maze)
 - [**Q3: Varying the Cost Function**](#q3-varying-the-cost-function)
     - [**UCS Medium Maze**](#ucs-medium-maze)
     - [**UCS Medium Dotted Maze**](#ucs-medium-dotted-maze)
     - [**UCS Medium Scary Maze**](#ucs-medium-scary-maze)
     - [**UCS Big Maze**](#ucs-big-maze)
+    - [**UCS Open Maze**](#ucs-open-maze)
 - [**Q4: A\* search**](#q4-a-search)
     - [**A\* Medium Maze**](#a-medium-maze)
     - [**A\* Big Maze**](#a-big-maze)
+    - [**A\* Open Maze**](#a-open-maze)
 
 
 
@@ -86,6 +91,23 @@ Pacman emerges victorious! Score: 300
 
 --------
 
+### **DFS Open Maze**
+------
+```
+python pacman.py -l openMaze -p SearchAgent
+```
+
+<img src="Resorces_for_readme/dfs-openMaze.gif" width = 90%>
+
+```
+Path found with total cost of 298 in 0.0 seconds
+Search nodes expanded: 576
+Pacman emerges victorious! Score: 212
+```
+-----
+
+
+
 # **Q2: Breadth First Search**
 
 ### **BFS Small Maze**
@@ -131,6 +153,22 @@ Search nodes expanded: 620
 Pacman emerges victorious! Score: 300
 ```
 --------
+
+### **BFS Open Maze**
+-----
+
+```
+python pacman.py -l openMaze -p SearchAgent -a fn=bfs
+```
+
+<img src="Resorces_for_readme/bfs-openMaze.gif" width = 90%>
+
+```
+Path found with total cost of 54 in 0.1 seconds
+Search nodes expanded: 682
+Pacman emerges victorious! Score: 456
+```
+---
 # **Q3: Varying the Cost Function**
 
 
@@ -197,6 +235,24 @@ Search nodes expanded: 620
 Pacman emerges victorious! Score: 300
 ```
 ---
+
+### **UCS Open Maze**
+-----
+
+```
+python pacman.py -l openMaze -p SearchAgent -a fn=ucs
+```
+
+<img src="Resorces_for_readme/bfs-openMaze.gif" width = 90%>
+
+```
+Path found with total cost of 54 in 0.1 seconds
+Search nodes expanded: 682
+Pacman emerges victorious! Score: 456
+```
+---
+
+
 # **Q4: A\* search**
 
 
@@ -209,9 +265,9 @@ python pacman.py -l mediumMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhat
 <img src = "Resorces_for_readme/Astar-mediumMaze.gif" width=90%>
 
 ```
-Path found with total cost of 74 in 0.0 seconds
-Search nodes expanded: 78
-Pacman emerges victorious! Score: 436
+Path found with total cost of 68 in 0.0 seconds
+Search nodes expanded: 221
+Pacman emerges victorious! Score: 442
 ```
 ---------
 ### **A\* Big Maze**
@@ -225,7 +281,23 @@ python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattan
 
 ```
 Path found with total cost of 210 in 0.0 seconds
-Search nodes expanded: 466
+Search nodes expanded: 549
 Pacman emerges victorious! Score: 300
 ```
 ---
+
+
+### **A\* Open Maze**
+---
+```
+python pacman.py -l openMaze -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
+```
+
+<img src= "Resorces_for_readme/Astar-openMaze.gif" width = 90%>
+
+```
+Path found with total cost of 54 in 0.0 seconds
+Search nodes expanded: 535
+Pacman emerges victorious! Score: 456
+```
+
