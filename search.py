@@ -243,20 +243,23 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     # list of the actions that the agent took so far to get to its state(position)
     start_cost = 0
     start_heuristic = heuristic(start_state, problem)
+    # The heuristic of the the start state
     start_node = (start_state,actions, start_cost)
     #node to hold the state and the array of actions
     visited_states = []
 
     fringe.push(start_node,start_cost+start_heuristic) 
-
+    #f(n) = g(n) + h(n), passing down the heuristic + cost as priority
     while not fringe.isEmpty():
  
         current_node = fringe.pop()
+        #pops the state with the least cost + heuristic 
         current_state = current_node[0]
         #current position
         current_actions = current_node [1] 
         #the actions the agent took so far to get to the current position 
         current_cost = current_node[2]
+        #total sum of cost up until our current state
 
         if (current_state not in visited_states):
             visited_states.append(current_state)
@@ -275,12 +278,16 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
                     successor_action = successor[1] 
                     #successor's required action to get to its position
                     successor_cost = successor[2]
+                    #the cost to pay to get to the successor
                     successor_heuristic = heuristic(successor_state, problem)
-                    successor_heuristic_and_cost = current_cost + successor_cost + successor_heuristic
+                    #successor's heuristic 
+                    successor_total_cost = current_cost + successor_cost
+                    #total sum of costs up until this successor state
                     actions = current_actions + [successor_action] 
                     #add the action to the action list
-                    next_node = (successor_state,actions,successor_cost+current_cost)
-                    fringe.push(next_node,successor_heuristic_and_cost)
+                    next_node = (successor_state,actions,successor_total_cost)
+                    fringe.push(next_node,successor_total_cost+successor_heuristic)
+                    #passing down the total cost and heuristic as a priority
    
     return actions
 
