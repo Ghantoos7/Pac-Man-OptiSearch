@@ -12,7 +12,7 @@ Table of Contents:
     - [**DFS Big Maze**](#dfs-big-maze)
     - [**DFS Open Maze**](#dfs-open-maze)
 - [**Q2: Breadth First Search**](#q2-breadth-first-search)
-    - [**BFS Small Maze**](#bfs-small-maze)
+    - [**BFS Tiny Maze**](#bfs-tiny-maze)
     - [**BFS Medium Maze**](#bfs-medium-maze)
     - [**BFS Big Maze**](#bfs-big-maze)
     - [**BFS Open Maze**](#bfs-open-maze)
@@ -26,6 +26,7 @@ Table of Contents:
     - [**A\* Medium Maze**](#a-medium-maze)
     - [**A\* Big Maze**](#a-big-maze)
     - [**A\* Open Maze**](#a-open-maze)
+- [**Comparison Table**](#comparison-table)
 
 
 
@@ -109,11 +110,11 @@ Pacman emerges victorious! Score: 212
 
 # **Q2: Breadth First Search**
 
-### **BFS Small Maze**
+### **BFS Tiny Maze**
 ------
 
 ```
-python pacman.py -l smallMaze -p SearchAgent -a fn=bfs
+python pacman.py -l tinyMaze -p SearchAgent -a fn=bfs
 ```
 
 <img src="Resorces_for_readme/BFS-tinyMaze.gif" width=35%>
@@ -299,4 +300,26 @@ Path found with total cost of 54 in 0.0 seconds
 Search nodes expanded: 535
 Pacman emerges victorious! Score: 456
 ```
+
+
+# **Comparison Table**
+
+|Maze | Algorithm|Cost|Score|Nodes Expanded
+|-----------|---------|----|-----|----|
+|Tiny   |DFS|10| 500 |15|
+|       |BFS|9|502|15|
+|Medium|DFS|130|380|146|
+||BFS|68|442|269|
+||UCS|68|442|269|
+||A*|68|422|221|
+|&nbsp;|
+|Big|DFS|210|300|390|
+||BFS|300|300|620|
+||UCS|300|300|620|
+||A*|210|300|549|
+|&nbsp;|
+|Open|DFS|298|212|576|
+||BFS|54|456|682|
+||UCS|54|456|682|
+||A*|54|456|535|
 
