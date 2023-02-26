@@ -325,6 +325,7 @@ class CornersProblem(search.SearchProblem):
         """
 
         successors = []
+        
         for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
             # Add a successor state to the successor list if the action is legal
             # Here's a code snippet for figuring out whether a new position hits a wall:
@@ -334,21 +335,27 @@ class CornersProblem(search.SearchProblem):
             #   hitsWall = self.walls[nextx][nexty]
 
             "*** YOUR CODE HERE ***"
+            # Get the current position and corners visited from the current state
             x,y = state[0]
             next_corners = state[1].copy()
-
+            # Determine the next position based on the current position and the chosen action
             dx,dy = Actions.directionToVector(action)
             nextx,nexty = int(x+dx),int(y+dy)
             cost = 1
+            # Check if the next position hits a wall(legal or illegal move)
             hitsWall = self.walls[nextx][nexty]
             next_position = (nextx,nexty)
 
+            # If the next position doesn't hit a wall, and check if it is a corner
             if not hitsWall:
                 cost = 1
+                # If it is a corner, check which corner it is and put the value as true in 
                 if next_position in self.corners:
                     corner_index = self.corners.index(next_position)
+                    # Mark the corner as visited
                     next_corners[corner_index] = True     
                 next_state = (next_position,next_corners)
+                # Add the successor to the succorers list
                 successors.append((next_state,action,cost))
 
         self._expanded += 1 # DO NOT CHANGE
@@ -385,7 +392,22 @@ def cornersHeuristic(state: Any, problem: CornersProblem):
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
     "*** YOUR CODE HERE ***"
 
-    
+    # Check if the current state is the goal state.
+    if problem.isGoalState(state):
+        # If the current state is the goal state, return 0.
+        return 0
+    else:
+        # Otherwise calculate the distances from the current state to each non-visited corner.
+        distances_from_goals = []
+        for i in range(len(state[1])):
+            if(not state[1][i]):
+                # Use Manhattan distance to calculate the distance to each corner.
+                distance_from_goal = util.manhattanDistance(state[0],corners[i])
+                distances_from_goals.append(distance_from_goal)
+        
+        # Choose the maximum distance as the heuristic value.
+        # This guarantees that the heuristic is admissible as it is a lower bound on the actual cost to reach the goal state.
+        return max(distances_from_goals)
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
