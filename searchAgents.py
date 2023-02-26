@@ -292,6 +292,8 @@ class CornersProblem(search.SearchProblem):
         # Please add any code here which you would like to use
         # in initializing the problem
         "*** YOUR CODE HERE ***"
+        self.start_corners_visited = [False,False,False,False]
+        self.start_state = (self.startingPosition,self.start_corners_visited)
 
     def getStartState(self):
         """
@@ -299,6 +301,7 @@ class CornersProblem(search.SearchProblem):
         space)
         """
         "*** YOUR CODE HERE ***"
+        return self.start_state
         util.raiseNotDefined()
 
     def isGoalState(self, state: Any):
@@ -306,6 +309,8 @@ class CornersProblem(search.SearchProblem):
         Returns whether this search state is a goal state of the problem.
         """
         "*** YOUR CODE HERE ***"
+        return state[1][0] and state[1][1] and state[1][2] and state[1][3]
+        
         util.raiseNotDefined()
 
     def getSuccessors(self, state: Any):
@@ -329,6 +334,22 @@ class CornersProblem(search.SearchProblem):
             #   hitsWall = self.walls[nextx][nexty]
 
             "*** YOUR CODE HERE ***"
+            x,y = state[0]
+            next_corners = state[1].copy()
+
+            dx,dy = Actions.directionToVector(action)
+            nextx,nexty = int(x+dx),int(y+dy)
+            cost = 1
+            hitsWall = self.walls[nextx][nexty]
+            next_position = (nextx,nexty)
+
+            if not hitsWall:
+                cost = 1
+                if next_position in self.corners:
+                    corner_index = self.corners.index(next_position)
+                    next_corners[corner_index] = True     
+                next_state = (next_position,next_corners)
+                successors.append((next_state,action,cost))
 
         self._expanded += 1 # DO NOT CHANGE
         return successors
@@ -362,9 +383,9 @@ def cornersHeuristic(state: Any, problem: CornersProblem):
     """
     corners = problem.corners # These are the corner coordinates
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
-
     "*** YOUR CODE HERE ***"
-    return 0 # Default to trivial solution
+
+    
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
