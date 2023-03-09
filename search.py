@@ -170,7 +170,7 @@ def breadthFirstSearch(problem: SearchProblem):
                     #add the action to the action list
                     next_node = (successor_state,actions)
                     fringe.push(next_node) 
-
+    
     return actions
 
 def uniformCostSearch(problem: SearchProblem):

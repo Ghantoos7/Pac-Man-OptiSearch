@@ -35,6 +35,7 @@ Table of Contents:
     - [**A\* (Manhattan Distance Heuristic) Medium Corners**](#a-manhattan-distance-heuristic-medium-corners)
 - [**Q7: Eating All The Dots**](#q7-eating-all-the-dots)
     - [**A\* (Maze Distance Heuristic) Tricky Search**](#a-maze-distance-heuristic-tricky-search)
+- [**Q8: Eating All The Dots**](#q8-eating-all-the-dots)
 
 
 
@@ -425,3 +426,4 @@ Search nodes expanded: 4137
 Pacman emerges victorious! Score: 570
 ```
 
+# **Q8: Eating All The Dots**
