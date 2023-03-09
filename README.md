@@ -31,6 +31,8 @@ Table of Contents:
     - [**Tiny Corners**](#tiny-corners)
     - [**Medium Corners**](#medium-corners)
     - [**A\* (MazeDistance Heuristic) Medium Corners**](#a-mazedistance-heuristic-medium-corners)
+- [**Q6: Corners Problem: Heuristic**](#q6-corners-problem-heuristic)
+    - [**A\* (Manhattan Distance Heuristic) Medium Corners**](#a-manhattan-distance-heuristic-medium-corners)
 
 
 
@@ -380,3 +382,26 @@ Path found with total cost of 106 in 5.8 seconds
 Search nodes expanded: 801
 Pacman emerges victorious! Score: 434
 ```
+---
+
+
+# **Q6: Corners Problem: Heuristic**
+
+
+
+---
+### **A\* (Manhattan Distance Heuristic) Medium Corners**
+---
+
+```
+python pacman.py -l mediumCorners -p AStarCornersAgent -z 0.5
+```
+
+<img src= "Resorces_for_readme/Q6-AstarmediumCorners.gif" width = 90%>
+
+```
+Path found with total cost of 106 in 0.1 seconds
+Search nodes expanded: 1136
+Pacman emerges victorious! Score: 434
+```
+
