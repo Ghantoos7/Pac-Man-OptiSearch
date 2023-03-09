@@ -33,6 +33,8 @@ Table of Contents:
     - [**A\* (MazeDistance Heuristic) Medium Corners**](#a-mazedistance-heuristic-medium-corners)
 - [**Q6: Corners Problem: Heuristic**](#q6-corners-problem-heuristic)
     - [**A\* (Manhattan Distance Heuristic) Medium Corners**](#a-manhattan-distance-heuristic-medium-corners)
+- [**Q7: Eating All The Dots**](#q7-eating-all-the-dots)
+    - [**A\* (Maze Distance Heuristic) Tricky Search**](#a-maze-distance-heuristic-tricky-search)
 
 
 
@@ -403,5 +405,23 @@ python pacman.py -l mediumCorners -p AStarCornersAgent -z 0.5
 Path found with total cost of 106 in 0.1 seconds
 Search nodes expanded: 1136
 Pacman emerges victorious! Score: 434
+```
+
+# **Q7: Eating All The Dots**
+
+---
+### **A\* (Maze Distance Heuristic) Tricky Search**
+
+```
+python pacman.py -l trickySearch -p AStarFoodSearchAgent
+```
+
+<img src= "Resorces_for_readme/Q7-AstartrickySearch.gif" width = 90%>
+
+
+```
+Path found with total cost of 60 in 20.2 seconds
+Search nodes expanded: 4137
+Pacman emerges victorious! Score: 570
 ```
 
