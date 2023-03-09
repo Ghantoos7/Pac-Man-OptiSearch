@@ -131,6 +131,7 @@ def depthFirstSearch(problem: SearchProblem):
 def breadthFirstSearch(problem: SearchProblem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
+
     fringe = util.Queue()
     start_state = problem.getStartState()
     #initial state
@@ -236,6 +237,7 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
+    
     fringe = util.PriorityQueue() 
     start_state = problem.getStartState()
     #initial state

@@ -27,6 +27,10 @@ Table of Contents:
     - [**A\* Big Maze**](#a-big-maze)
     - [**A\* Open Maze**](#a-open-maze)
 - [**Comparison Table**](#comparison-table)
+- [**Q5:  Finding All the Corners**](#q5--finding-all-the-corners)
+    - [**Tiny Corners**](#tiny-corners)
+    - [**Medium Corners**](#medium-corners)
+    - [**A\* (MazeDistance Heuristic) Medium Corners**](#a-mazedistance-heuristic-medium-corners)
 
 
 
@@ -321,3 +325,58 @@ Pacman emerges victorious! Score: 456
 ||UCS|54|456|682|
 ||A*|54|456|535|
 
+
+# **Q5:  Finding All the Corners**
+
+---
+### **Tiny Corners**
+---
+
+```
+python pacman.py -l tinyCorners -p SearchAgent -a fn=bfs,prob=CornersProblem
+```
+
+<img src= "Resorces_for_readme/Q5-tinyCorners.gif" width = 35%>
+
+
+
+```
+Path found with total cost of 28 in 0.0 seconds
+Search nodes expanded: 252
+Pacman emerges victorious! Score: 512
+```
+
+
+---
+### **Medium Corners**
+---
+
+```
+python pacman.py -l mediumCorners -p SearchAgent -a fn=bfs,prob=CornersProblem
+```
+
+<img src= "Resorces_for_readme/Q5-mediumCorners.gif" width = 90%>
+
+
+
+```
+Path found with total cost of 106 in 0.1 seconds
+Search nodes expanded: 1966
+Pacman emerges victorious! Score: 434
+```
+
+---
+### **A\* (MazeDistance Heuristic) Medium Corners**
+---
+
+```
+python pacman.py -l mediumCorners -p AStarFoodSearchAgent
+```
+
+<img src= "Resorces_for_readme/Q5-AstarmediumCorners.gif" width = 90%>
+
+```
+Path found with total cost of 106 in 5.8 seconds
+Search nodes expanded: 801
+Pacman emerges victorious! Score: 434
+```

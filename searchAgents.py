@@ -292,7 +292,9 @@ class CornersProblem(search.SearchProblem):
         # Please add any code here which you would like to use
         # in initializing the problem
         "*** YOUR CODE HERE ***"
+        # a list representing the corners visited if True means that it was visited otherwise not
         self.start_corners_visited = [False,False,False,False]
+        # defining the state with the current position and the corners visited so far
         self.start_state = (self.startingPosition,self.start_corners_visited)
 
     def getStartState(self):
@@ -309,6 +311,7 @@ class CornersProblem(search.SearchProblem):
         Returns whether this search state is a goal state of the problem.
         """
         "*** YOUR CODE HERE ***"
+        # if all entries in the list of visited array are True that means that all corners have been visited which is the goal state
         return state[1][0] and state[1][1] and state[1][2] and state[1][3]
         
         util.raiseNotDefined()
@@ -516,7 +519,7 @@ def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
     for food_position in food_positions:
         food_distances.append(mazeDistance(current_position,food_position, problem.startingGameState))
 
-    # return the max distance so the heuristic is admissible 
+    # return the max distance so the heuristic is admissible
     return max(food_distances)
     
 
