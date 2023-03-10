@@ -36,6 +36,7 @@ Table of Contents:
 - [**Q7: Eating All The Dots**](#q7-eating-all-the-dots)
     - [**A\* (Maze Distance Heuristic) Tricky Search**](#a-maze-distance-heuristic-tricky-search)
 - [**Q8: Eating All The Dots**](#q8-eating-all-the-dots)
+    - [**BFS Big Search**](#bfs-big-search)
 
 
 
@@ -412,6 +413,8 @@ Pacman emerges victorious! Score: 434
 
 ---
 ### **A\* (Maze Distance Heuristic) Tricky Search**
+---
+
 
 ```
 python pacman.py -l trickySearch -p AStarFoodSearchAgent
@@ -427,3 +430,17 @@ Pacman emerges victorious! Score: 570
 ```
 
 # **Q8: Eating All The Dots**
+
+---
+### **BFS Big Search**
+---
+
+```
+python pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5
+```
+<img src= "Resorces_for_readme/bigSearch.gif" width = 90%>
+
+```
+Path found with cost 350.
+Pacman emerges victorious! Score: 2360
+```

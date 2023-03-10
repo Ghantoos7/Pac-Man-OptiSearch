@@ -554,6 +554,7 @@ class ClosestDotSearchAgent(SearchAgent):
         
         "*** YOUR CODE HERE ***"
 
+        # we can simply use bfs and it will find the closest dot
         actions = search.bfs(problem)
         return actions
         util.raiseNotDefined()
@@ -589,17 +590,20 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         The state is Pacman's position. Fill this in with a goal test that will
         complete the problem definition.
         """
-        x,y = state
 
         "*** YOUR CODE HERE ***"
+        # turn the grid into a list of food locations
         food_list_positions = self.food.asList()
         distances = []
-        for food in food_list_positions:
-            food_position = food
+        # loop through the list and for every food dot add the location to it from the current state
+        for food_position in food_list_positions:
             distances.append(util.manhattanDistance(state,food_position))
+        # find the closest food dot
         Min = min(distances)
         min_index = distances.index(Min)
+        # find the respective food dot 
         food_position_compare = food_list_positions[min_index]
+        # if the state is equal to the closest food dot then its the goal state
         return state == food_position_compare
         
 
